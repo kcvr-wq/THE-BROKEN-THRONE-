@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ظلال القرمز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Noto+Naskh+Arabic:wght@400;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- شاشة الدخول -->
+<div id="splash">
+  <div class="sp-in">
+    <div class="sp-line"></div>
+    <h1 id="sp-title"></h1>
+    <p id="sp-by"></p>
+    <button id="enter" class="btn">ادخل</button>
+  </div>
+</div>
+
+<header id="top">
+  <a class="logo" href="#/" id="logo"></a>
+  <nav>
+    <a href="#/">الرئيسية</a>
+    <a href="#/chapters">الفصول</a>
+    <a href="#/world">العالم</a>
+  </nav>
+  <div class="tools">
+    <button id="bs" title="بحث (Ctrl+K)">بحث</button>
+    <button id="bset" title="الإعدادات">الإعدادات</button>
+  </div>
+</header>
+
+<div id="rbar"></div>
+<main id="app"></main>
+<a id="resume" class="btn" hidden></a>
+
+<!-- البحث السريع -->
+<div id="qs" hidden>
+  <div class="qs-box">
+    <input id="qi" placeholder="ابحث عن فصل أو شخصية..." autocomplete="off">
+    <ul id="qr"></ul>
+  </div>
+</div>
+
+<!-- الإعدادات -->
+<aside id="drawer" hidden>
+  <div class="dr-head"><h2>الإعدادات</h2><button id="dclose">إغلاق</button></div>
+  <label>المظهر
+    <select id="s-theme">
+      <option value="dark">داكن (أحمر وأسود)</option>
+      <option value="oled">أسود OLED</option>
+      <option value="sepia">دافئ</option>
+      <option value="light">فاتح</option>
+    </select>
+  </label>
+  <label>نوع الخط
+    <select id="s-font"><option value="serif">نسخ</option><option value="sans">تجوّل</option><option value="ruqaa">رقعة</option></select>
+  </label>
+  <label>حجم الخط <input type="range" id="s-size" min="15" max="34"></label>
+  <label>المسافة بين السطور <input type="range" id="s-lh" min="1.4" max="2.8" step=".1"></label>
+  <label>عرض النص <input type="range" id="s-w" min="420" max="960" step="20"></label>
+  <label>سرعة التمرير / القراءة <input type="range" id="s-speed" min="1" max="5" step="1"></label>
+  <label class="chk"><input type="checkbox" id="s-bionic"> وضع القراءة السريعة</label>
+  <label class="chk"><input type="checkbox" id="s-spoil"> إخفاء الحرق في بطاقات الشخصيات</label>
+  <div class="row">
+    <button id="exp" class="btn ghost">تصدير بياناتي</button>
+    <label class="btn ghost" for="imp">استيراد</label>
+    <input type="file" id="imp" accept="application/json" hidden>
+  </div>
+</aside>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
